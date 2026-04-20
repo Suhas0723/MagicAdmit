@@ -467,11 +467,11 @@ h1.hero-title em{
   transition:all .4s cubic-bezier(.22,1,.36,1);
 }
 .fcard:hover{transform:translateY(-8px);box-shadow:0 28px 72px rgba(83,58,113,.18)}
-.fcard-img{width:100%;height:320px;overflow:hidden;position:relative;background:linear-gradient(135deg,#ede0f5,#d0bde8)}
+.fcard-img{width:100%;height:400px;overflow:hidden;position:relative;background:linear-gradient(135deg,#ede0f5,#d0bde8)}
 .fcard-img img{width:100%;height:100%;object-fit:cover;object-position:center 15%;transition:transform .6s}
-.fcard:nth-child(1) .fcard-img img{object-position:center 25%}
-.fcard:nth-child(2) .fcard-img img{object-position:center 20%}
-.fcard:nth-child(3) .fcard-img img{object-position:center top}
+.fcard:nth-child(1) .fcard-img img{object-position:center 20%}
+.fcard:nth-child(2) .fcard-img img{object-position:center 15%}
+.fcard:nth-child(3) .fcard-img img{object-position:center 10%;object-fit:cover;transform:scale(1.15)}
 .fcard:hover .fcard-img img{transform:scale(1.05)}
 .fcard-img-overlay{
   position:absolute;inset:0;
@@ -482,12 +482,12 @@ h1.hero-title em{
 .fcard-role{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--lav);margin-bottom:14px}
 .fcard-bio{font-size:13px;line-height:1.72;color:var(--txt-mid);margin-bottom:22px}
 .fcard-admits{
-  background:linear-gradient(135deg,var(--deep) 0%,var(--deep-lt) 100%);
+  background:linear-gradient(135deg,#F5C518 0%,#E8A800 100%);
   border-radius:16px;padding:18px 20px;margin-bottom:18px;
 }
 .fcard-admits-lbl{
   font-size:9.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
-  color:rgba(253,244,220,.55);margin-bottom:12px;
+  color:rgba(59,38,87,.65);margin-bottom:12px;
 }
 .admit-rows{display:flex;flex-direction:column;gap:8px}
 .admit-row-item{
@@ -495,10 +495,10 @@ h1.hero-title em{
   background:rgba(255,255,255,.1);border-radius:10px;
   padding:10px 14px;
 }
-.admit-school{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--cream)}
+.admit-school{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--deep)}
 .admit-rate{
   font-size:11px;font-weight:700;
-  background:rgba(232,213,255,.25);color:var(--star);
+  background:rgba(59,38,87,.15);color:var(--deep);
   padding:3px 10px;border-radius:50px;letter-spacing:.04em;white-space:nowrap;
 }
 .li-btn{
@@ -519,7 +519,7 @@ h1.hero-title em{
 .mstat{background:rgba(253,244,220,.07);border:1px solid rgba(167,153,183,.2);border-radius:20px;padding:30px 26px}
 .mstat .mn{font-family:'Playfair Display',serif;font-size:46px;font-weight:900;color:var(--lav);line-height:1}
 .mstat .ml{font-size:12.5px;color:rgba(253,244,220,.52);margin-top:7px}
-.mission-text p{font-size:16px;line-height:1.8;color:rgba(253,244,220,.68);margin-bottom:18px}
+.mission-text{font-size:16px;line-height:1.8;color:rgba(253,244,220,.82);margin-bottom:18px}
 
 /* ═══════════════════════════════════════════════════════════
    PRICING PAGE
@@ -639,19 +639,19 @@ h1.hero-title em{
 .sum-row.feat .sum-price{color:var(--lav)}
 
 /* ─── FOOTER ─────────────────────────────────────────────── */
-footer{background:var(--deep-dk);padding:72px 60px 30px}
+footer{background:var(--cream-mid);padding:72px 60px 30px;border-top:1px solid rgba(83,58,113,.1)}
 .ft-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:56px}
-.ft-brand img{height:56px;margin-bottom:18px;filter:url(#remove-white);opacity:.95}
-.ft-brand p{font-size:13.5px;line-height:1.72;color:rgba(253,244,220,.45);max-width:260px}
-.ft-col h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--cream);margin-bottom:18px}
+.ft-brand img{height:56px;margin-bottom:18px;opacity:.95;mix-blend-mode:multiply}
+.ft-brand p{font-size:13.5px;line-height:1.72;color:var(--txt-mid);max-width:260px}
+.ft-col h4{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--txt);margin-bottom:18px}
 .ft-col ul{list-style:none}
 .ft-col li{margin-bottom:10px}
-.ft-col a{color:rgba(253,244,220,.42);text-decoration:none;font-size:13.5px;cursor:pointer;transition:color .2s}
-.ft-col a:hover{color:rgba(253,244,220,.85)}
-.ft-bot{border-top:1px solid rgba(167,153,183,.15);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:rgba(253,244,220,.3)}
+.ft-col a{color:var(--txt-soft);text-decoration:none;font-size:13.5px;cursor:pointer;transition:color .2s}
+.ft-col a:hover{color:var(--txt)}
+.ft-bot{border-top:1px solid rgba(83,58,113,.12);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--txt-soft)}
 .ft-bot-links{display:flex;gap:24px}
-.ft-bot-links a{color:rgba(253,244,220,.28);text-decoration:none;transition:color .2s}
-.ft-bot-links a:hover{color:rgba(253,244,220,.65)}
+.ft-bot-links a{color:var(--txt-soft);text-decoration:none;transition:color .2s}
+.ft-bot-links a:hover{color:var(--txt)}
 
 /* ─── TWEAKS PANEL ───────────────────────────────────────── */
 #tweaks-panel{
@@ -749,11 +749,6 @@ footer{background:var(--deep-dk);padding:72px 60px 30px}
           <div class="stat-num" data-count="500" data-suffix="+">0</div>
           <div class="stat-lbl">Students Placed</div>
         </div>
-        <div class="stat-divider"></div>
-        <div>
-          <div class="stat-num" data-prefix="$" data-count="4.2" data-suffix="M">0</div>
-          <div class="stat-lbl">Scholarships Earned</div>
-        </div>
       </div>
     </div>
 
@@ -770,10 +765,6 @@ footer{background:var(--deep-dk);padding:72px 60px 30px}
           <div class="admit-row"><div class="admit-dot"></div>MIT, Class of 2028</div>
           <div class="admit-row"><div class="admit-dot"></div>Yale University, Class of 2028</div>
           <div class="admit-row"><div class="admit-dot"></div>Columbia University, Class of 2028</div>
-        </div>
-        <div class="hcard hcard-mini">
-          <div class="mini-n">$4.2M</div>
-          <div class="mini-l">Scholarships Earned<br>by Our Students</div>
         </div>
         <div class="hcard-float f1">
           <div class="fv">4.9★</div>
@@ -797,37 +788,31 @@ footer{background:var(--deep-dk);padding:72px 60px 30px}
     <div class="svc-grid">
       <div class="svc-card r">
         <div class="svc-n">01</div>
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/></svg></div>
         <h3>School Selection Strategy</h3>
         <p>Data-driven school lists tailored to your profile, goals, and chances — building the perfect reach, match, and safety balance.</p>
       </div>
       <div class="svc-card r delay-1">
         <div class="svc-n">02</div>
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg></div>
         <h3>Essay Coaching</h3>
         <p>Transform your experiences into compelling narratives. We guide every draft until your voice shines with clarity and authenticity.</p>
       </div>
       <div class="svc-card r delay-2">
         <div class="svc-n">03</div>
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></div>
         <h3>Application Management</h3>
         <p>From activity descriptions to supplementals — no deadline missed, no detail overlooked. End-to-end oversight of every application.</p>
       </div>
       <div class="svc-card r delay-1">
         <div class="svc-n">04</div>
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0"/></svg></div>
         <h3>Interview Preparation</h3>
         <p>Mock interviews with expert feedback to help you walk in confident, articulate, and memorable to every admissions officer.</p>
       </div>
       <div class="svc-card r delay-2">
         <div class="svc-n">05</div>
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
         <h3>Financial Aid Guidance</h3>
         <p>Maximize scholarships, navigate FAFSA, and build a financial strategy that makes your dream school financially attainable.</p>
       </div>
       <div class="svc-card r delay-3">
         <div class="svc-n">06</div>
-        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></div>
         <h3>Profile Building</h3>
         <p>From freshman year onward, we help build an extracurricular and academic profile that tells a cohesive, impressive story.</p>
       </div>
@@ -932,7 +917,6 @@ footer{background:var(--deep-dk);padding:72px 60px 30px}
           <p>Year after year, our students beat the odds — because strategy and storytelling make all the difference.</p>
           <div class="mini-grid">
             <div class="mini-s"><div class="mn">500+</div><div class="ml">Students Counseled</div></div>
-            <div class="mini-s"><div class="mn">$4.2M</div><div class="ml">Scholarships Won</div></div>
             <div class="mini-s"><div class="mn">10+</div><div class="ml">Years Experience</div></div>
             <div class="mini-s"><div class="mn">4.9★</div><div class="ml">Student Rating</div></div>
           </div>
@@ -1010,7 +994,7 @@ footer{background:var(--deep-dk);padding:72px 60px 30px}
             <div class="fcard-admits-lbl">✦ Admitted To</div>
             <div class="admit-rows">
               <div class="admit-row-item"><span class="admit-school">Duke University</span><span class="admit-rate">RD · 3.7%</span></div>
-              <div class="admit-row-item"><span class="admit-school">Georgia Institute of Technology</span><span class="admit-rate">10% accept</span></div>
+              <div class="admit-row-item"><span class="admit-school">Georgia Institute of Technology</span><span class="admit-rate">RD · 10%</span></div>
             </div>
           </div>
           <a href="https://www.linkedin.com/in/aarinkaramchandani/" target="_blank" rel="noopener" class="li-btn">
@@ -1056,7 +1040,7 @@ footer{background:var(--deep-dk);padding:72px 60px 30px}
             <div class="fcard-admits-lbl">✦ Admitted To</div>
             <div class="admit-rows">
               <div class="admit-row-item"><span class="admit-school">Carnegie Mellon University CS</span><span class="admit-rate">RD · 5%</span></div>
-              <div class="admit-row-item"><span class="admit-school">Georgia Institute of Technology</span><span class="admit-rate">10% accept</span></div>
+              <div class="admit-row-item"><span class="admit-school">Georgia Institute of Technology</span><span class="admit-rate">RD · 10%</span></div>
             </div>
           </div>
           <a href="https://www.linkedin.com/in/suhas-devarapalli-a274912a1/" target="_blank" rel="noopener" class="li-btn">
@@ -1084,7 +1068,6 @@ footer{background:var(--deep-dk);padding:72px 60px 30px}
       <div class="mission-stats r delay-2">
         <div class="mstat"><div class="mn">94%</div><div class="ml">Top-20 Acceptance Rate</div></div>
         <div class="mstat"><div class="mn">500+</div><div class="ml">Students Counseled</div></div>
-        <div class="mstat"><div class="mn">$4.2M</div><div class="ml">Scholarships Secured</div></div>
         <div class="mstat"><div class="mn">4.9★</div><div class="ml">Average Student Rating</div></div>
       </div>
     </div>
