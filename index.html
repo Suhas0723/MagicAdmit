@@ -833,10 +833,10 @@ footer{background:var(--cream-mid);padding:72px 60px 30px;border-top:1px solid r
       <p class="desc light center r">Book your free 30-minute consultation. No commitment, no pressure — just an honest conversation about your future.</p>
 
       <form class="cta-form r" id="contactForm" onsubmit="handleSubmit(event)">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Email Address" required>
-        <input type="text" placeholder="Student Grade (e.g. 11th)" class="span-2">
-        <select class="span-2">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="text" name="grade" placeholder="Student Grade (e.g. 11th)" class="span-2">
+        <select name="service" class="span-2">
           <option value="" disabled selected>Which service interests you?</option>
           <option>Essentials Counseling ($999)</option>
           <option>Premium Admissions Plan ($1,799)</option>
@@ -845,7 +845,7 @@ footer{background:var(--cream-mid);padding:72px 60px 30px;border-top:1px solid r
           <option>SAT/ACT Group Program ($449)</option>
           <option>I'm not sure yet</option>
         </select>
-        <textarea class="span-2" placeholder="Tell us a bit about your goals and timeline..."></textarea>
+        <textarea name="message" class="span-2" placeholder="Tell us a bit about your goals and timeline..."></textarea>
         <div class="span-2" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
           <button type="submit" class="btn btn-light">Book Free Consultation</button>
           <button type="button" class="btn btn-outline-light" onclick="showPage('pricing')">See Pricing First</button>
@@ -1357,13 +1357,38 @@ const statsObs = new IntersectionObserver(entries => {
 document.querySelectorAll('.hero-stats').forEach(el => statsObs.observe(el));
 
 /* ── CONTACT FORM ───────────────────────────────────────────── */
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
   const form = document.getElementById('contactForm');
   const msg = document.getElementById('successMsg');
-  form.style.display = 'none';
-  msg.style.display = 'block';
-  msg.style.animation = 'fadeUp .5s ease both';
+  const btn = form.querySelector('button[type="submit"]');
+
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  const data = {
+    name:    form.querySelector('[name="name"]').value,
+    email:   form.querySelector('[name="email"]').value,
+    grade:   form.querySelector('[name="grade"]').value,
+    service: form.querySelector('[name="service"]').value,
+    message: form.querySelector('[name="message"]').value,
+  };
+
+  try {
+    const res = await fetch('/api/consultation', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error('Request failed');
+    form.style.display = 'none';
+    msg.style.display = 'block';
+    msg.style.animation = 'fadeUp .5s ease both';
+  } catch {
+    btn.disabled = false;
+    btn.textContent = 'Book Free Consultation';
+    alert('Something went wrong — please try again or email us directly.');
+  }
 }
 </script>
 </body>
